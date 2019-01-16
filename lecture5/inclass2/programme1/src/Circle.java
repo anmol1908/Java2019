@@ -1,28 +1,28 @@
-mport java.util.*;
+import java.util.*;
 class Circle
 {
 	
-	double radius;
+	double rad;
 	Circle()
 	{
-		this.radius=1;
+		this.rad=1;
 	}
 	Circle(double r)
 	{
-		this.radius = r;
+		this.rad = r;
 	}
-	double area()
+        double calcircumference()
 	{
-		return (3.14*radius*radius);
+		return (2*3.14*rad);
 	}
-	double circumference()
+	double calarea()
 	{
-		return (2*3.14*radius);
+		return (3.14*rad*rad);
 	}
-	void display(double area, double circum)
+	void display()
 	{
-		System.out.println("Area is: "+area);
-		System.out.println("Circumference is: "+circum);
+                System.out.println("\nCircumference of circle is : "+calcircumference());
+		System.out.println("\nArea of circle is : "+calarea());
 	}
 }
 
