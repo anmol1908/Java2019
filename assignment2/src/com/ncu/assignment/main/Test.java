@@ -1,8 +1,9 @@
 package com.ncu.assignment.main;
-import java.util.*;
+
 import com.ncu.assignment.validation.*;
 import com.ncu.assignment.processor.*;
 import com.ncu.assignment.exception.*;
+import java.util.*;
 class Test
 {
 
@@ -20,7 +21,7 @@ class Test
 		date = scan.nextInt();
 		month = scan.nextInt();
 		year = scan.nextInt();
-		stu.dob= new Date(date,month,year);
+		stu.dob= new DateEx(date,month,year);
 
 		System.out.println("Enter address \n Line 1-");
 		String l1 = scan.nextLine();
@@ -127,9 +128,9 @@ class Test
 			}
 
 			stu.projects[i]= new Project(name,role);
-			stu.projects[i].startDate = new Date(d1,m1,y1);
+			stu.projects[i].startDate = new DateEx(d1,m1,y1);
 			
-			stu.projects[i].endDate = new Date(d2,m2,y2);
+			stu.projects[i].endDate = new DateEx(d2,m2,y2);
 		}
 
 		}

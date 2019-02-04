@@ -1,27 +1,28 @@
 package com.ncu.assignment.processor;
-
+import com.ncu.assignment.validation.*;
+import com.ncu.assignment.exception.*;
 
 public class Student
 {
-String firstName;
-String lastName;
-Address addr;
-Date dob;
-String [] skills;
-Qualification[] qual;
-Project [] projects;
-String eMail;
-String contactNo;
+public String firstName;
+public String lastName;
+public Address addr;
+public DateEx dob;
+public String [] skills;
+public Qualification[] qual;
+public Project [] projects;
+public String eMail;
+public String contactNo;
 
 
-Student()
+public Student()
 {
 	this.firstName=null;
 	this.lastName=null;
 	this.eMail=null;
 	this.contactNo=null;
 }
-Student( String f,String l,String e,String c)
+public Student( String f,String l,String e,String c)
 {
 	this.firstName=f;
 	this.lastName=l;
@@ -34,14 +35,22 @@ void getAddress(String l1,String l2,String c,String s,int p)
 }
 void getDOB(int d,int m,int y)
 {
-	dob=new Date(d,m,y);
+	dob=new DateEx(d,m,y);
 }
 
 
-void display()
+public void display()
 	{
 	try
 	{
+		try
+		{
+			if(firstName==null||lastName==null||eMail==null||contactNo==null||addr==null)
+			{
+			throw new MandatoryMissingException(StudentValidationMessage.Mandatory);
+			}
+		        else
+			{
 	System.out.println("Name of Student: " +firstName+ " " +lastName);
 	System.out.println("\n\nDOBof student is "+dob.day+"/"+dob.month+"/"+dob.year);		
 	System.out.println("\n\nAddress of student: "+addr.line1+", "+addr.line2+"\nCity:"+addr.city+" , "+addr.pinCode+"\nstate: "+addr.state);
@@ -71,12 +80,18 @@ void display()
 		System.out.print(projects[i].responsibilities[counter]+"\t");
 		}
 	}
-	}
+		}
+    		}
+		 catch(MandatoryMissingException a)
+		{
+			System.out.println(a);
+		}
+		}
         catch(NullPointerException e)
 	{
 	System.out.println(e);
 	}
-
+	
 	}
 
 

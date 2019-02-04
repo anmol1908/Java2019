@@ -4,37 +4,37 @@ package com.ncu.assignment.processor;
 import java.util.*;
 public class Project
 {
-String name;
-Date startDate;
-Date endDate;
-String role;
-String [] responsibilities;
+public String name;
+public DateEx startDate;
+public DateEx endDate;
+public String role;
+public String [] responsibilities;
 
 Scanner scan=new Scanner(System.in);
 
 
-Project()
+public Project()
 {
 this.name=null;
 this.role=null;
 }
 
 
-Project(String n,String role)
+public Project(String n,String role)
 {
 this.name=name;
 this.role=role;
 }
 
 
-void setStartDate (int d,int m, int y)
+public void setStartDate (int d,int m, int y)
 {
-startDate=new Date(d,m,y);	
+startDate=new DateEx(d,m,y);	
 }
 
-void setEndDate (int d,int m, int y)
+public void setEndDate (int d,int m, int y)
 {
- endDate=new Date(d,m,y);	
+ endDate=new DateEx(d,m,y);	
 }
 
 void responsiblities(String res)

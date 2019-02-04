@@ -3,6 +3,6 @@ package com.ncu.assignment.validation;
 
 public class StudentValidationMessage
 {
-	static final String Date = " Invalid date  ";
-	static final String Mandatory = " Mandatory information missing  ";
+	public static final String Date = " Invalid date  ";
+	public static final String Mandatory = " Mandatory information missing  ";
 }
